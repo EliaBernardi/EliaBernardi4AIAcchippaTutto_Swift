@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BC11F212270994800A6C928 /* GiocoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC11F202270994800A6C928 /* GiocoViewController.swift */; };
 		5BF2E3D12255F03800E65EF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2E3D02255F03800E65EF0 /* AppDelegate.swift */; };
 		5BF2E3D32255F03800E65EF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2E3D22255F03800E65EF0 /* ViewController.swift */; };
 		5BF2E3D62255F03800E65EF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF2E3D42255F03800E65EF0 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5BC11F202270994800A6C928 /* GiocoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiocoViewController.swift; sourceTree = "<group>"; };
 		5BF2E3CD2255F03800E65EF0 /* AcchiappaTutto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcchiappaTutto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF2E3D02255F03800E65EF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BF2E3D22255F03800E65EF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				5BF2E3D02255F03800E65EF0 /* AppDelegate.swift */,
 				5BF2E3D22255F03800E65EF0 /* ViewController.swift */,
+				5BC11F202270994800A6C928 /* GiocoViewController.swift */,
 				5BF2E3D42255F03800E65EF0 /* Main.storyboard */,
 				5BF2E3D72255F03800E65EF0 /* Assets.xcassets */,
 				5BF2E3D92255F03800E65EF0 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BC11F212270994800A6C928 /* GiocoViewController.swift in Sources */,
 				5BF2E3D32255F03800E65EF0 /* ViewController.swift in Sources */,
 				5BF2E3D12255F03800E65EF0 /* AppDelegate.swift in Sources */,
 			);
