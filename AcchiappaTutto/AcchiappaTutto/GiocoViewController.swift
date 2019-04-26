@@ -37,7 +37,24 @@ class GiocoViewController: UIViewController {
         CoordinateButton.append(Posizione5)
         CoordinateButton.append(Posizione6)
         
+        let Timer = DispatchTime.now()
         
+        
+        //DispatchQueue.main.asyncAfter
+        for i in 0...5
+        {
+            DispatchQueue.main.asyncAfter(deadline: Timer + .seconds(2), execute:
+            {
+                let button = UIButton(frame: CoordinateButton[i])
+                let image = UIImage(named: "Talpa3")
+                button.setImage(image, for: .normal)
+                self.view.addSubview(button)
+                self.view.bringSubview(toFront: button)
+            
+            })
+        }
+        
+        /*
         for i in 0...5
         {
             let button = UIButton(frame: CoordinateButton[i])
@@ -46,7 +63,7 @@ class GiocoViewController: UIViewController {
             self.view.addSubview(button)
             self.view.bringSubview(toFront: button)
         }
-        
+        */
         
         //let button = UIButton(frame: CGRect(x: randomLarghezza, y: randomAltezza, width: 84, height: 90))
         /*
