@@ -37,21 +37,29 @@ class GiocoViewController: UIViewController {
         CoordinateButton.append(Posizione5)
         CoordinateButton.append(Posizione6)
         
-        let Timer = DispatchTime.now()
+        var ArrayButton = [UIButton]()
+        ArrayButton = RiempiArray(CoordinateButton: CoordinateButton)
         
+        
+        let Timer = DispatchTime.now()
+        var tempo = 1
         
         //DispatchQueue.main.asyncAfter
-        for i in 0...5
+        let image = UIImage(named: "Talpa3")
+        for i in 0...9
         {
-            DispatchQueue.main.asyncAfter(deadline: Timer + .seconds(2), execute:
+            let talpa: Int = Int.random(in: 0 ..< 5)
+            let button = ArrayButton[talpa]
+            button.setImage(image, for: .normal)
+            
+            DispatchQueue.main.asyncAfter(deadline: Timer + .seconds(tempo), execute:
             {
-                let button = UIButton(frame: CoordinateButton[i])
-                let image = UIImage(named: "Talpa3")
                 button.setImage(image, for: .normal)
                 self.view.addSubview(button)
                 self.view.bringSubview(toFront: button)
-            
             })
+            //button.isHidden = true
+            tempo = tempo + 1
         }
         
         /*
@@ -72,6 +80,16 @@ class GiocoViewController: UIViewController {
         self.view.addSubview(button)
         self.view.bringSubview(toFront: button)
        */
+    }
+    
+    func RiempiArray(CoordinateButton : [CGRect]) -> [UIButton]
+    {
+        var ArrayButton = [UIButton]()
+        for i in 0...CoordinateButton.count-1
+        {
+            ArrayButton.append(UIButton(frame: CoordinateButton[i]))
+        }
+        return ArrayButton
     }
     
 
