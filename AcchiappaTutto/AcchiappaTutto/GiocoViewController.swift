@@ -9,7 +9,11 @@
 import UIKit
 
 class GiocoViewController: UIViewController {
-
+    
+    var NumeroTalpe = 10
+    var timer = Timer()
+    var ArrayButton = [UIButton]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,13 +36,13 @@ class GiocoViewController: UIViewController {
         CoordinateButton.append(Posizione5)
         CoordinateButton.append(Posizione6)
         
-        var ArrayButton = [UIButton]()
+        
         ArrayButton = RiempiArray(CoordinateButton: CoordinateButton)
         
         
-        let Timer = DispatchTime.now()
+        let cronometro = DispatchTime.now()
         var tempo = 1
-        
+        /*
         let image = UIImage(named: "Talpa3")
         for i in 0...9
         {
@@ -54,9 +58,63 @@ class GiocoViewController: UIViewController {
             })
             tempo = tempo + 1
         }
-
+         
+         
+         
+         let image = UIImage(named: "Talpa3")
+         for i in 0...9
+         {
+         let talpa: Int = Int(arc4random_uniform(5))
+         let button = ArrayButton[talpa]
+         button.setImage(image, for: .normal)
+         button.addTarget(self, action: #selector(ClickButton(_:)), for: .touchUpInside)
+         
+         DispatchQueue.main.asyncAfter(deadline: cronometro + .seconds(tempo), execute:
+         {
+         self.view.addSubview(button)
+         self.view.bringSubview(toFront: button)
+         })
+         tempo = tempo + 1
+         print("talpaFatta" + String(tempo))
+         }
+         
+         
+         
+         
+         
+         
+         
+         
+*/
+        var timer:Timer!
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GiocoViewController.MettiTalpe), userInfo: nil, repeats: true)
+        
+        
+    
+        
         
 }
+    @objc func MettiTalpe()
+    {
+        NumeroTalpe-1
+        print(String(NumeroTalpe))
+        if NumeroTalpe == 0
+        {
+            timer.invalidate()
+        }
+        else
+        {
+            let image = UIImage(named: "Talpa3")
+            let talpa: Int = Int(arc4random_uniform(5))
+            let button = ArrayButton[talpa]
+            button.setImage(image, for: .normal)
+            button.addTarget(self, action: #selector(ClickButton(_:)), for: .touchUpInside)
+            self.view.addSubview(button)
+            self.view.bringSubview(toFront: button)
+        }
+        
+    }
     
     func RiempiArray(CoordinateButton : [CGRect]) -> [UIButton]
     {
