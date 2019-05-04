@@ -11,8 +11,10 @@ import UIKit
 class GiocoViewController: UIViewController {
     
     var NumeroTalpe = 10
+    var TalpaPrecedente = -1
     var timer = Timer()
     var ArrayButton = [UIButton]()
+    let button : UIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,19 +88,22 @@ class GiocoViewController: UIViewController {
          
          
 */
-        var timer:Timer!
+        //var timer:Timer!
         
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GiocoViewController.MettiTalpe), userInfo: nil, repeats: true)
+        //timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GiocoViewController.MettiTalpe), userInfo: nil, repeats: true)
         
         
-    
+        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(MettiTalpe), userInfo: nil, repeats: true)
+        
+        
+
         
         
 }
     @objc func MettiTalpe()
     {
-        NumeroTalpe-1
-        print(String(NumeroTalpe))
+        //print(String(NumeroTalpe))
+        TogliTalpe(Talpa: button)
         if NumeroTalpe == 0
         {
             timer.invalidate()
@@ -106,14 +111,33 @@ class GiocoViewController: UIViewController {
         else
         {
             let image = UIImage(named: "Talpa3")
-            let talpa: Int = Int(arc4random_uniform(5))
-            let button = ArrayButton[talpa]
+            var talpa: Int = Int(arc4random_uniform(5))
+            while talpa == TalpaPrecedente //non faccio comparire 2 talpe nello stesso posto
+            {
+                talpa = Int(arc4random_uniform(5))
+            }
+            TalpaPrecedente = talpa
+            //
+                button.frame = ArrayButton[talpa].frame
             button.setImage(image, for: .normal)
+            //button.setTitle(NumeroTalpe.description, for: .normal)
             button.addTarget(self, action: #selector(ClickButton(_:)), for: .touchUpInside)
             self.view.addSubview(button)
             self.view.bringSubview(toFront: button)
+            button.isHidden = false //Mostro la talpa nella nuova posizione
+            print(button.description)
+            
         }
+        NumeroTalpe -= 1
         
+    }
+    
+    func TogliTalpe(Talpa : UIButton)
+    {
+        if TalpaPrecedente != -1
+        {
+            Talpa.isHidden = true
+        }
     }
     
     func RiempiArray(CoordinateButton : [CGRect]) -> [UIButton]
