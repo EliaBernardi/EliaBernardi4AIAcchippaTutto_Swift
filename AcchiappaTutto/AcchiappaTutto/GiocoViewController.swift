@@ -10,11 +10,14 @@ import UIKit
 
 class GiocoViewController: UIViewController {
     
+    @IBOutlet weak var LabelPunteggio: UILabel!
+    
     var NumeroTalpe = 10
     var TalpaPrecedente = -1
     var timer = Timer()
     var ArrayButton = [UIButton]()
     let button : UIButton = UIButton()
+    var talpeColpite = 6
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,7 @@ class GiocoViewController: UIViewController {
         
         //W H : 40/580   169/585   303/582
         //W h : 41/701   179/705   312/701
+        
         
         let Posizione1 = CGRect(x: 40, y: 580, width: 84, height: 90)
         let Posizione2 = CGRect(x: 169, y: 585, width: 84, height: 90)
@@ -42,71 +46,19 @@ class GiocoViewController: UIViewController {
         ArrayButton = RiempiArray(CoordinateButton: CoordinateButton)
         
         
-        let cronometro = DispatchTime.now()
-        var tempo = 1
-        /*
-        let image = UIImage(named: "Talpa3")
-        for i in 0...9
-        {
-            let talpa: Int = Int.random(in: 0 ..< 5)
-            let button = ArrayButton[talpa]
-            button.setImage(image, for: .normal)
-            button.addTarget(self, action: #selector(ClickButton(_:)), for: .touchUpInside)
-            
-            DispatchQueue.main.asyncAfter(deadline: Timer + .seconds(tempo), execute:
-            {
-                self.view.addSubview(button)
-                self.view.bringSubview(toFront: button)
-            })
-            tempo = tempo + 1
-        }
-         
-         
-         
-         let image = UIImage(named: "Talpa3")
-         for i in 0...9
-         {
-         let talpa: Int = Int(arc4random_uniform(5))
-         let button = ArrayButton[talpa]
-         button.setImage(image, for: .normal)
-         button.addTarget(self, action: #selector(ClickButton(_:)), for: .touchUpInside)
-         
-         DispatchQueue.main.asyncAfter(deadline: cronometro + .seconds(tempo), execute:
-         {
-         self.view.addSubview(button)
-         self.view.bringSubview(toFront: button)
-         })
-         tempo = tempo + 1
-         print("talpaFatta" + String(tempo))
-         }
-         
-         
-         
-         
-         
-         
-         
-         
-*/
-        //var timer:Timer!
-        
-        //timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GiocoViewController.MettiTalpe), userInfo: nil, repeats: true)
-        
-        
         timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(MettiTalpe), userInfo: nil, repeats: true)
         
-        
-
         
         
 }
     @objc func MettiTalpe()
     {
-        //print(String(NumeroTalpe))
-        TogliTalpe(Talpa: button)
+        //TogliTalpe(Talpa: button)
         if NumeroTalpe == 0
         {
             timer.invalidate()
+            SalvaScore.SalvaScore(Score: talpeColpite)
+            LabelPunteggio.text = "PROVO i TXT" + SalvaScore.LeggiScore()
         }
         else
         {
@@ -117,8 +69,7 @@ class GiocoViewController: UIViewController {
                 talpa = Int(arc4random_uniform(5))
             }
             TalpaPrecedente = talpa
-            //
-                button.frame = ArrayButton[talpa].frame
+            button.frame = ArrayButton[talpa].frame
             button.setImage(image, for: .normal)
             //button.setTitle(NumeroTalpe.description, for: .normal)
             button.addTarget(self, action: #selector(ClickButton(_:)), for: .touchUpInside)
@@ -126,12 +77,10 @@ class GiocoViewController: UIViewController {
             self.view.bringSubview(toFront: button)
             button.isHidden = false //Mostro la talpa nella nuova posizione
             print(button.description)
-            
         }
         NumeroTalpe -= 1
-        
-    }
-    
+        LabelPunteggio.text = "Talpe uccise: " + String(talpeColpite) + "/" + "10"    }
+    /*
     func TogliTalpe(Talpa : UIButton)
     {
         if TalpaPrecedente != -1
@@ -139,7 +88,7 @@ class GiocoViewController: UIViewController {
             Talpa.isHidden = true
         }
     }
-    
+    */
     func RiempiArray(CoordinateButton : [CGRect]) -> [UIButton]
     {
         var ArrayButton = [UIButton]()
@@ -152,7 +101,9 @@ class GiocoViewController: UIViewController {
     
     @objc func ClickButton(_ sender: UIButton)
     {
+        talpeColpite += 1
         sender.isHidden = true
+        //print("Colpita la talpa n. " + String(NumeroTalpe))
     }
 
 }
