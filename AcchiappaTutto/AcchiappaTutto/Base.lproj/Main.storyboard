@@ -80,26 +80,54 @@
                                     <constraint firstAttribute="height" constant="24" id="zY9-zy-rWV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.89569956064224243" green="0.82377481460571289" blue="0.78394973278045654" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cartello" translatesAutoresizingMaskIntoConstraints="NO" id="QSY-jh-96M">
+                                <rect key="frame" x="68" y="113" width="278" height="367"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Best score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWn-y8-UG9">
+                                <rect key="frame" x="137" y="239" width="141" height="30"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
+                                <color key="textColor" red="0.84797328709999997" green="0.59506881239999998" blue="0.26718831059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glK-v0-uJK">
+                                <rect key="frame" x="178" y="281" width="59" height="30"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
+                                <color key="textColor" red="0.84797328709999997" green="0.59506881239999998" blue="0.26718831059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.8479732871055603" green="0.59506881237030029" blue="0.26718831062316895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="glK-v0-uJK" firstAttribute="top" secondItem="pWn-y8-UG9" secondAttribute="bottom" constant="12" id="0ft-ky-0aU"/>
+                            <constraint firstItem="glK-v0-uJK" firstAttribute="top" secondItem="pWn-y8-UG9" secondAttribute="bottom" constant="12" id="31O-6L-1T1"/>
                             <constraint firstItem="PGs-3G-i4x" firstAttribute="top" secondItem="uca-2X-AIC" secondAttribute="bottom" constant="417" id="52k-9q-owT"/>
+                            <constraint firstItem="gEE-KC-KMd" firstAttribute="trailing" secondItem="glK-v0-uJK" secondAttribute="trailing" constant="177" id="9q8-Sg-lb2"/>
                             <constraint firstItem="gEE-KC-KMd" firstAttribute="trailing" secondItem="uca-2X-AIC" secondAttribute="trailing" constant="324" id="ChU-5x-On1"/>
                             <constraint firstItem="R7y-KU-5RV" firstAttribute="leading" secondItem="gEE-KC-KMd" secondAttribute="leading" id="JL9-21-9n8"/>
+                            <constraint firstItem="glK-v0-uJK" firstAttribute="leading" secondItem="gEE-KC-KMd" secondAttribute="leading" constant="178" id="Jiz-ff-tBp"/>
                             <constraint firstItem="uca-2X-AIC" firstAttribute="leading" secondItem="gEE-KC-KMd" secondAttribute="leading" constant="20" id="MXt-Jn-JRD"/>
+                            <constraint firstItem="pWn-y8-UG9" firstAttribute="top" secondItem="gEE-KC-KMd" secondAttribute="top" constant="195" id="MnE-c6-q5K"/>
+                            <constraint firstItem="pWn-y8-UG9" firstAttribute="leading" secondItem="gEE-KC-KMd" secondAttribute="leading" constant="137" id="Mum-Lf-8f2"/>
                             <constraint firstItem="gEE-KC-KMd" firstAttribute="trailing" secondItem="PGs-3G-i4x" secondAttribute="trailing" constant="20" id="SY5-YM-P4c"/>
+                            <constraint firstItem="R7y-KU-5RV" firstAttribute="top" secondItem="QSY-jh-96M" secondAttribute="bottom" constant="8" id="Tc1-Gf-nDo"/>
                             <constraint firstItem="R7y-KU-5RV" firstAttribute="trailing" secondItem="gEE-KC-KMd" secondAttribute="trailing" id="Uyz-tI-kVJ"/>
                             <constraint firstItem="PGs-3G-i4x" firstAttribute="leading" secondItem="gEE-KC-KMd" secondAttribute="leading" constant="20" id="VmH-zK-D5c"/>
                             <constraint firstItem="R7y-KU-5RV" firstAttribute="top" secondItem="uca-2X-AIC" secondAttribute="bottom" constant="394" id="YPH-3w-98e"/>
+                            <constraint firstItem="gEE-KC-KMd" firstAttribute="trailing" secondItem="QSY-jh-96M" secondAttribute="trailing" constant="68" id="ZXL-Rg-OFZ"/>
+                            <constraint firstItem="QSY-jh-96M" firstAttribute="leading" secondItem="gEE-KC-KMd" secondAttribute="leading" constant="68" id="ahI-Mc-vO1"/>
+                            <constraint firstItem="QSY-jh-96M" firstAttribute="top" secondItem="uca-2X-AIC" secondAttribute="bottom" constant="19" id="e2u-qn-fTX"/>
                             <constraint firstItem="gEE-KC-KMd" firstAttribute="bottom" secondItem="PGs-3G-i4x" secondAttribute="bottom" constant="327" id="i5i-xG-ISo"/>
+                            <constraint firstItem="R7y-KU-5RV" firstAttribute="top" secondItem="glK-v0-uJK" secondAttribute="bottom" constant="177" id="kQl-U3-Aet"/>
+                            <constraint firstItem="gEE-KC-KMd" firstAttribute="trailing" secondItem="pWn-y8-UG9" secondAttribute="trailing" constant="136" id="trL-IR-AxO"/>
                             <constraint firstItem="uca-2X-AIC" firstAttribute="top" secondItem="gEE-KC-KMd" secondAttribute="top" constant="14" id="xx0-nP-uon"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gEE-KC-KMd"/>
                     </view>
                     <connections>
+                        <outlet property="LabelBestScore" destination="glK-v0-uJK" id="iCf-RM-Xo6"/>
                         <outlet property="LabelPunteggio" destination="PGs-3G-i4x" id="7uv-gU-KLx"/>
                     </connections>
                 </viewController>
@@ -110,6 +138,7 @@
     </scenes>
     <resources>
         <image name="BackgroundTalpa" width="310" height="197"/>
+        <image name="Cartello" width="490" height="490"/>
         <image name="Talpa" width="640" height="640"/>
         <image name="logo" width="504" height="88"/>
     </resources>

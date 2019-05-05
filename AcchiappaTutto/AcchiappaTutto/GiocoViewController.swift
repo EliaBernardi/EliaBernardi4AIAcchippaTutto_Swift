@@ -12,21 +12,22 @@ class GiocoViewController: UIViewController {
     
     @IBOutlet weak var LabelPunteggio: UILabel!
     
+    @IBOutlet weak var LabelBestScore: UILabel!
+    
     var NumeroTalpe = 10
     var TalpaPrecedente = -1
     var timer = Timer()
     var ArrayButton = [UIButton]()
     let button : UIButton = UIButton()
-    var talpeColpite = 6
+    var talpeColpite = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        LabelBestScore.text = SalvaScore.LeggiScore()
         
         //W H : 40/580   169/585   303/582
         //W h : 41/701   179/705   312/701
-        
         
         let Posizione1 = CGRect(x: 40, y: 580, width: 84, height: 90)
         let Posizione2 = CGRect(x: 169, y: 585, width: 84, height: 90)
@@ -42,23 +43,18 @@ class GiocoViewController: UIViewController {
         CoordinateButton.append(Posizione5)
         CoordinateButton.append(Posizione6)
         
-        
         ArrayButton = RiempiArray(CoordinateButton: CoordinateButton)
         
-        
         timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(MettiTalpe), userInfo: nil, repeats: true)
-        
-        
-        
 }
+    
     @objc func MettiTalpe()
     {
-        //TogliTalpe(Talpa: button)
         if NumeroTalpe == 0
         {
             timer.invalidate()
             SalvaScore.SalvaScore(Score: talpeColpite)
-            LabelPunteggio.text = "PROVO i TXT" + SalvaScore.LeggiScore()
+            LabelBestScore.text = SalvaScore.LeggiScore() //Se il top score è cambiato
         }
         else
         {
@@ -77,18 +73,11 @@ class GiocoViewController: UIViewController {
             self.view.bringSubview(toFront: button)
             button.isHidden = false //Mostro la talpa nella nuova posizione
             print(button.description)
-        }
-        NumeroTalpe -= 1
-        LabelPunteggio.text = "Talpe uccise: " + String(talpeColpite) + "/" + "10"    }
-    /*
-    func TogliTalpe(Talpa : UIButton)
-    {
-        if TalpaPrecedente != -1
-        {
-            Talpa.isHidden = true
+            NumeroTalpe -= 1
+            LabelPunteggio.text = "Talpe colpite: " + String(talpeColpite) + "/" + "10"
         }
     }
-    */
+
     func RiempiArray(CoordinateButton : [CGRect]) -> [UIButton]
     {
         var ArrayButton = [UIButton]()
@@ -103,7 +92,7 @@ class GiocoViewController: UIViewController {
     {
         talpeColpite += 1
         sender.isHidden = true
-        //print("Colpita la talpa n. " + String(NumeroTalpe))
+        print("Colpita la talpa n. " + String(NumeroTalpe))
     }
 
 }
