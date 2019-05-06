@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundTalpa" translatesAutoresizingMaskIntoConstraints="NO" id="R7y-KU-5RV">
-                                <rect key="frame" x="0.0" y="488" width="414" height="408"/>
+                                <rect key="frame" x="0.0" y="488" width="414" height="408.00000000000006"/>
                                 <color key="backgroundColor" red="0.8479732871055603" green="0.59506881237030029" blue="0.26718831062316895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="408" id="GSs-Mn-pln"/>

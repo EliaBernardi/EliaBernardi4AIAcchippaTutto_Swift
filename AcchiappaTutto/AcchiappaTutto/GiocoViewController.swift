@@ -55,6 +55,7 @@ class GiocoViewController: UIViewController {
             timer.invalidate()
             SalvaScore.SalvaScore(Score: talpeColpite)
             LabelBestScore.text = SalvaScore.LeggiScore() //Se il top score è cambiato
+            button.isHidden = true
         }
         else
         {
@@ -72,10 +73,9 @@ class GiocoViewController: UIViewController {
             self.view.addSubview(button)
             self.view.bringSubview(toFront: button)
             button.isHidden = false //Mostro la talpa nella nuova posizione
-            print(button.description)
             NumeroTalpe -= 1
-            LabelPunteggio.text = "Talpe colpite: " + String(talpeColpite) + "/" + "10"
         }
+        LabelPunteggio.text = "Talpe colpite: " + String(talpeColpite) + "/" + "10"
     }
 
     func RiempiArray(CoordinateButton : [CGRect]) -> [UIButton]
@@ -92,7 +92,6 @@ class GiocoViewController: UIViewController {
     {
         talpeColpite += 1
         sender.isHidden = true
-        print("Colpita la talpa n. " + String(NumeroTalpe))
     }
 
 }
