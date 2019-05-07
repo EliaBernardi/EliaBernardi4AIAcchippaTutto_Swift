@@ -12,17 +12,7 @@ class SalvaScore
 {
     static public func LeggiScore() -> String
     {
-        //var ArrayValori = [String]()
-        
         return UserDefaults.standard.string(forKey: "score") ?? String("0")
-        /*if valori == nil
-        {
-            ArrayValori.append("0")
-        }
-        else
-        {
-            
-        }*/
         
     }
     
