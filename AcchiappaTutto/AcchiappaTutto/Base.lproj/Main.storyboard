@@ -18,28 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Talpa" translatesAutoresizingMaskIntoConstraints="NO" id="N7Z-tH-OOf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Talpa" translatesAutoresizingMaskIntoConstraints="NO" id="N7Z-tH-OOf">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhG-kf-gKQ">
-                                <rect key="frame" x="23" y="720" width="368" height="88"/>
-                                <state key="normal" title="Button" image="logo"/>
+                                <rect key="frame" x="83" y="682" width="248" height="69"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="45"/>
+                                <state key="normal" title="Easy">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.18548648816018698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="Inizio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="850-Rl-y4t"/>
                                     <segue destination="XZw-Zl-4Yb" kind="presentation" modalTransitionStyle="crossDissolve" id="4ks-XR-bJY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmX-KC-jkF">
+                                <rect key="frame" x="83" y="774" width="248" height="69"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="45"/>
+                                <state key="normal" title="Hard">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.18548648819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="pix-99-j2V" kind="show" id="qs5-OM-1iX"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="iRL-N8-fzP">
+                                <rect key="frame" x="29" y="85" width="356" height="88"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="N7Z-tH-OOf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="A8j-Mh-Xpm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uhG-kf-gKQ" secondAttribute="bottom" constant="54" id="DwI-JX-vUN"/>
-                            <constraint firstAttribute="bottom" secondItem="N7Z-tH-OOf" secondAttribute="bottom" id="Dzr-u2-XRv"/>
-                            <constraint firstItem="uhG-kf-gKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="Ig5-gx-Uu3"/>
-                            <constraint firstItem="N7Z-tH-OOf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="g3c-uU-lcD"/>
-                            <constraint firstItem="N7Z-tH-OOf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vFg-FU-T2y"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uhG-kf-gKQ" secondAttribute="trailing" constant="23" id="yfm-Au-Muy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iRL-N8-fzP" secondAttribute="trailing" constant="29" id="7Mw-vm-ZPf"/>
+                            <constraint firstItem="HmX-KC-jkF" firstAttribute="top" secondItem="uhG-kf-gKQ" secondAttribute="bottom" constant="23" id="Ief-LV-05f"/>
+                            <constraint firstItem="iRL-N8-fzP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="Tf7-hI-fgc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uhG-kf-gKQ" secondAttribute="trailing" constant="83" id="ddb-ph-GS3"/>
+                            <constraint firstItem="iRL-N8-fzP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="gs6-xx-67b"/>
+                            <constraint firstItem="HmX-KC-jkF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="hub-3q-7eR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HmX-KC-jkF" secondAttribute="trailing" constant="83" id="mGS-D5-Uqk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HmX-KC-jkF" secondAttribute="bottom" constant="19" id="qgd-da-5cl"/>
+                            <constraint firstItem="uhG-kf-gKQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="yZN-fs-XZn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -57,7 +76,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundTalpa" translatesAutoresizingMaskIntoConstraints="NO" id="R7y-KU-5RV">
-                                <rect key="frame" x="0.0" y="488" width="414" height="408.00000000000006"/>
+                                <rect key="frame" x="0.0" y="488" width="414" height="408"/>
                                 <color key="backgroundColor" red="0.8479732871055603" green="0.59506881237030029" blue="0.26718831062316895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="408" id="GSs-Mn-pln"/>
@@ -133,7 +152,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySt-yg-JuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901.44927536231887" y="124.55357142857142"/>
+            <point key="canvasLocation" x="945" y="-23"/>
+        </scene>
+        <!--Gioco2 View Controller-->
+        <scene sceneID="pDN-e3-8e6">
+            <objects>
+                <viewController id="pix-99-j2V" customClass="Gioco2ViewController" customModule="AcchiappaTutto" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rKv-qf-5h3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Punteggio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIg-F0-A9w">
+                                <rect key="frame" x="87" y="444" width="78" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.84797328709999997" green="0.59506881239999998" blue="0.26718831059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="teC-dy-n8S"/>
+                    </view>
+                    <connections>
+                        <outlet property="LabelPunteggio" destination="DIg-F0-A9w" id="TKq-Yo-7p1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CW3-1s-17O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="945" y="680"/>
         </scene>
     </scenes>
     <resources>
