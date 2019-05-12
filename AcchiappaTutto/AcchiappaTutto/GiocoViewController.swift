@@ -24,7 +24,7 @@ class GiocoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        LabelBestScore.text = SalvaScore.LeggiScore()
+        LabelBestScore.text = SalvaScore.LeggiScore(chiave: "view1")
         
         //W H : 40/580   169/585   303/582
         //W h : 41/701   179/705   312/701
@@ -53,8 +53,8 @@ class GiocoViewController: UIViewController {
         if NumeroTalpe == 0
         {
             timer.invalidate()
-            SalvaScore.SalvaScore(Score: talpeColpite)
-            LabelBestScore.text = SalvaScore.LeggiScore() //Se il top score è cambiato
+            SalvaScore.SalvaScore(Score: talpeColpite, chiave: "view1")
+            LabelBestScore.text = SalvaScore.LeggiScore(chiave: "view1") //Se il top score è cambiato
             button.isHidden = true
         }
         else
@@ -68,7 +68,6 @@ class GiocoViewController: UIViewController {
             TalpaPrecedente = talpa
             button.frame = ArrayButton[talpa].frame
             button.setImage(image, for: .normal)
-            //button.setTitle(NumeroTalpe.description, for: .normal)
             button.addTarget(self, action: #selector(ClickButton(_:)), for: .touchUpInside)
             self.view.addSubview(button)
             self.view.bringSubview(toFront: button)

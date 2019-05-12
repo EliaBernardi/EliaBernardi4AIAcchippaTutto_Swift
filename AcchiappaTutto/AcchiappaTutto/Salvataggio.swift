@@ -10,18 +10,17 @@ import Foundation
 
 class SalvaScore
 {
-    static public func LeggiScore() -> String
+    static public func LeggiScore(chiave : String) -> String
     {
-        return UserDefaults.standard.string(forKey: "score") ?? String("0")
-        
+        return UserDefaults.standard.string(forKey: chiave) ?? String("0")
     }
     
-    static public func SalvaScore(Score: Int)
+    static public func SalvaScore(Score: Int, chiave: String)
     {
         //Best score
-        if Score > Int(UserDefaults.standard.string(forKey: "score") ?? String("0"))!
+        if Score > Int(UserDefaults.standard.string(forKey: chiave) ?? String("0"))!
         {
-            UserDefaults.standard.set(Score, forKey: "score")
+            UserDefaults.standard.set(Score, forKey: chiave)
         }
     }
 }

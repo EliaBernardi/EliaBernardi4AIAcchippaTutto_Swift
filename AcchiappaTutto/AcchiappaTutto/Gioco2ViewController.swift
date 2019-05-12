@@ -12,6 +12,8 @@ class Gioco2ViewController: UIViewController {
 
     @IBOutlet var LabelPunteggio: UILabel!
     
+    @IBOutlet weak var LabelBestScore: UILabel!
+    
     var NumeroTalpe = 10
     var TalpaPrecedente = -1
     var timer = Timer()
@@ -20,15 +22,10 @@ class Gioco2ViewController: UIViewController {
     let bombaBtn : UIButton = UIButton()
     var talpeColpite = 0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        // LABEL PUNTEGGIO
-        
-        
-        
+        LabelBestScore.text = SalvaScore.LeggiScore(chiave: "view2")
         
         //W H : 40/580   169/585   303/582
         //W h : 41/701   179/705   312/701
@@ -60,13 +57,13 @@ class Gioco2ViewController: UIViewController {
         if NumeroTalpe == 0
         {
             timer.invalidate()
-            SalvaScore.SalvaScore(Score: talpeColpite)
-            //LabelBestScore.text = SalvaScore.LeggiScore() //Se il top score è cambiato
+            SalvaScore.SalvaScore(Score: talpeColpite, chiave: "view2")
+            LabelBestScore.text = SalvaScore.LeggiScore(chiave: "view2") //Se il top score è cambiato
             button.isHidden = true
         }
         else
         {
-            let bombaImage = UIImage(named: "Talpa")
+            let bombaImage = UIImage(named: "bomba")
             let image = UIImage(named: "Talpa3")
             var talpa: Int = Int(arc4random_uniform(5))
             while talpa == TalpaPrecedente //non faccio comparire 2 talpe nello stesso posto
@@ -78,7 +75,6 @@ class Gioco2ViewController: UIViewController {
             var TalpaOBomba: Int = Int(arc4random_uniform(10)) //se esce 0 1 2 metto anche la bomba
             if(TalpaOBomba == 0 || TalpaOBomba == 1 || TalpaOBomba == 2)
             {
-                print("CreoBomba")
                 bombaBtn.isHidden = false
                 var bomba = Int(arc4random_uniform(5))
                 while bomba == talpa //non faccio comparire talpa e bomba nello stesso posto
@@ -94,15 +90,13 @@ class Gioco2ViewController: UIViewController {
             }
             
             button.setImage(image, for: .normal)
-            //button.setTitle(NumeroTalpe.description, for: .normal)
             button.addTarget(self, action: #selector(ClickButton(_:)), for: .touchUpInside)
             self.view.addSubview(button)
             self.view.bringSubview(toFront: button)
             button.isHidden = false //Mostro la talpa nella nuova posizione
-            //print(button.description)
             NumeroTalpe -= 1
         }
-        //LabelPunteggio.text = "Talpe colpite: " + String(talpeColpite) + "/" + "10"
+        LabelPunteggio.text = "Talpe colpite: " + String(talpeColpite) + "/" + "10"
     }
     
     
@@ -119,18 +113,14 @@ class Gioco2ViewController: UIViewController {
     @objc func ClickButton(_ sender: UIButton)
     {
         talpeColpite += 1
-        print(talpeColpite)
         sender.isHidden = true
-        //print("Colpita la talpa n. " + String(NumeroTalpe))
     }
     
     @objc func ClickBomba(_ sender: UIButton)
     {
-        print("Colpita la bomba")
         timer.invalidate()
         LabelPunteggio.text = "HAI PERSO"
         button.isHidden = true
     }
     
-
 }
