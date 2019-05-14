@@ -11,8 +11,16 @@ import UIKit
 class Gioco2ViewController: UIViewController {
 
     @IBOutlet var LabelPunteggio: UILabel!
-    
+    @IBOutlet weak var OutBtnReload: UIButton!
     @IBOutlet weak var LabelBestScore: UILabel!
+    @IBAction func Reload(_ sender: Any)
+    {
+        OutBtnReload.isHidden = true
+        NumeroTalpe = 10
+        TalpaPrecedente = -1
+        talpeColpite = 0
+        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(MettiOggetti), userInfo: nil, repeats: true)
+    }
     
     var NumeroTalpe = 10
     var TalpaPrecedente = -1
@@ -26,7 +34,7 @@ class Gioco2ViewController: UIViewController {
         super.viewDidLoad()
 
         LabelBestScore.text = SalvaScore.LeggiScore(chiave: "view2")
-        
+        OutBtnReload.isHidden = true
         //W H : 40/580   169/585   303/582
         //W h : 41/701   179/705   312/701
         
@@ -47,8 +55,6 @@ class Gioco2ViewController: UIViewController {
         ArrayButton = RiempiArray(CoordinateButton: CoordinateButton)
         
         timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(MettiOggetti), userInfo: nil, repeats: true)
-
-
     }
     
     @objc func MettiOggetti()
@@ -60,6 +66,7 @@ class Gioco2ViewController: UIViewController {
             SalvaScore.SalvaScore(Score: talpeColpite, chiave: "view2")
             LabelBestScore.text = SalvaScore.LeggiScore(chiave: "view2") //Se il top score è cambiato
             button.isHidden = true
+            OutBtnReload.isHidden = false
         }
         else
         {
@@ -121,6 +128,7 @@ class Gioco2ViewController: UIViewController {
         timer.invalidate()
         LabelPunteggio.text = "HAI PERSO"
         button.isHidden = true
+        OutBtnReload.isHidden = false
     }
     
 }

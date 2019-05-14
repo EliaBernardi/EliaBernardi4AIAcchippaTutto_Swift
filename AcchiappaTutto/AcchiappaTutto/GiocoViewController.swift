@@ -11,8 +11,16 @@ import UIKit
 class GiocoViewController: UIViewController {
     
     @IBOutlet weak var LabelPunteggio: UILabel!
-    
+    @IBOutlet weak var OutBtnReload: UIButton!
     @IBOutlet weak var LabelBestScore: UILabel!
+    @IBAction func BtnReload(_ sender: Any)
+    {
+        OutBtnReload.isHidden = true
+        NumeroTalpe = 10
+        TalpaPrecedente = -1
+        talpeColpite = 0
+        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(MettiTalpe), userInfo: nil, repeats: true)
+    }
     
     var NumeroTalpe = 10
     var TalpaPrecedente = -1
@@ -25,6 +33,7 @@ class GiocoViewController: UIViewController {
         super.viewDidLoad()
 
         LabelBestScore.text = SalvaScore.LeggiScore(chiave: "view1")
+        OutBtnReload.isHidden = true
         
         //W H : 40/580   169/585   303/582
         //W h : 41/701   179/705   312/701
@@ -56,6 +65,7 @@ class GiocoViewController: UIViewController {
             SalvaScore.SalvaScore(Score: talpeColpite, chiave: "view1")
             LabelBestScore.text = SalvaScore.LeggiScore(chiave: "view1") //Se il top score è cambiato
             button.isHidden = true
+            OutBtnReload.isHidden = false
         }
         else
         {

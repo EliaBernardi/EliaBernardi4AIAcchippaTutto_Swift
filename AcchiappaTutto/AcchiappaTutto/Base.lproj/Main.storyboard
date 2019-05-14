@@ -76,7 +76,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundTalpa" translatesAutoresizingMaskIntoConstraints="NO" id="R7y-KU-5RV">
-                                <rect key="frame" x="0.0" y="488" width="414" height="408.00000000000006"/>
+                                <rect key="frame" x="0.0" y="488" width="414" height="408"/>
                                 <color key="backgroundColor" red="0.8479732871055603" green="0.59506881237030029" blue="0.26718831062316895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="408" id="GSs-Mn-pln"/>
@@ -117,10 +117,22 @@
                                 <color key="textColor" red="0.84797328709999997" green="0.59506881239999998" blue="0.26718831059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYp-aN-Xfn">
+                                <rect key="frame" x="292" y="411" width="122" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="aNO-ef-7Oq"/>
+                                    <constraint firstAttribute="height" constant="115" id="d3S-kI-S65"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Marrone"/>
+                                <connections>
+                                    <action selector="BtnReload:" destination="XZw-Zl-4Yb" eventType="touchUpInside" id="k1J-wU-KnQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.8479732871055603" green="0.59506881237030029" blue="0.26718831062316895" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="glK-v0-uJK" firstAttribute="top" secondItem="pWn-y8-UG9" secondAttribute="bottom" constant="12" id="0ft-ky-0aU"/>
+                            <constraint firstItem="hYp-aN-Xfn" firstAttribute="top" secondItem="gEE-KC-KMd" secondAttribute="top" constant="367" id="12n-J3-YVm"/>
                             <constraint firstItem="glK-v0-uJK" firstAttribute="top" secondItem="pWn-y8-UG9" secondAttribute="bottom" constant="12" id="31O-6L-1T1"/>
                             <constraint firstItem="PGs-3G-i4x" firstAttribute="top" secondItem="uca-2X-AIC" secondAttribute="bottom" constant="417" id="52k-9q-owT"/>
                             <constraint firstItem="gEE-KC-KMd" firstAttribute="trailing" secondItem="glK-v0-uJK" secondAttribute="trailing" constant="177" id="9q8-Sg-lb2"/>
@@ -136,6 +148,7 @@
                             <constraint firstItem="PGs-3G-i4x" firstAttribute="leading" secondItem="gEE-KC-KMd" secondAttribute="leading" constant="20" id="VmH-zK-D5c"/>
                             <constraint firstItem="R7y-KU-5RV" firstAttribute="top" secondItem="uca-2X-AIC" secondAttribute="bottom" constant="394" id="YPH-3w-98e"/>
                             <constraint firstItem="gEE-KC-KMd" firstAttribute="trailing" secondItem="QSY-jh-96M" secondAttribute="trailing" constant="68" id="ZXL-Rg-OFZ"/>
+                            <constraint firstItem="hYp-aN-Xfn" firstAttribute="trailing" secondItem="gEE-KC-KMd" secondAttribute="trailing" id="acb-T3-E3O"/>
                             <constraint firstItem="QSY-jh-96M" firstAttribute="leading" secondItem="gEE-KC-KMd" secondAttribute="leading" constant="68" id="ahI-Mc-vO1"/>
                             <constraint firstItem="QSY-jh-96M" firstAttribute="top" secondItem="uca-2X-AIC" secondAttribute="bottom" constant="19" id="e2u-qn-fTX"/>
                             <constraint firstItem="gEE-KC-KMd" firstAttribute="bottom" secondItem="PGs-3G-i4x" secondAttribute="bottom" constant="327" id="i5i-xG-ISo"/>
@@ -148,6 +161,7 @@
                     <connections>
                         <outlet property="LabelBestScore" destination="glK-v0-uJK" id="iCf-RM-Xo6"/>
                         <outlet property="LabelPunteggio" destination="PGs-3G-i4x" id="7uv-gU-KLx"/>
+                        <outlet property="OutBtnReload" destination="hYp-aN-Xfn" id="RJC-UV-Bla"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySt-yg-JuZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,7 +177,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="BackgroundTalpa" translatesAutoresizingMaskIntoConstraints="NO" id="2dT-EG-4mH">
-                                <rect key="frame" x="0.0" y="486" width="414" height="408.00000000000006"/>
+                                <rect key="frame" x="0.0" y="486" width="414" height="408"/>
                                 <color key="backgroundColor" red="0.84797328709999997" green="0.59506881239999998" blue="0.26718831059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="HRw-aG-Rxd"/>
@@ -217,6 +231,17 @@
                                 <color key="textColor" red="0.8956995606" green="0.82377481460000002" blue="0.78394973280000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DwF-4Z-KmC">
+                                <rect key="frame" x="292" y="411" width="122" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="2YS-ar-VK6"/>
+                                    <constraint firstAttribute="height" constant="115" id="6er-ma-Q0E"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Marrone"/>
+                                <connections>
+                                    <action selector="Reload:" destination="pix-99-j2V" eventType="touchUpInside" id="tre-FI-Tdr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.84797328709999997" green="0.59506881239999998" blue="0.26718831059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -230,9 +255,11 @@
                             <constraint firstItem="teC-dy-n8S" firstAttribute="trailing" secondItem="t6Y-Rl-LCw" secondAttribute="trailing" constant="324" id="LBf-Y1-8Jv"/>
                             <constraint firstItem="Bjt-lL-1I3" firstAttribute="top" secondItem="5ea-UB-iJM" secondAttribute="bottom" constant="12" id="Odk-rv-Fvo"/>
                             <constraint firstItem="teC-dy-n8S" firstAttribute="trailing" secondItem="Bjt-lL-1I3" secondAttribute="trailing" constant="176" id="R8m-jy-Yic"/>
+                            <constraint firstItem="DwF-4Z-KmC" firstAttribute="top" secondItem="teC-dy-n8S" secondAttribute="top" constant="367" id="Ugn-rF-duf"/>
                             <constraint firstItem="teC-dy-n8S" firstAttribute="trailing" secondItem="tb6-Gi-zvX" secondAttribute="trailing" constant="68" id="WpL-5a-zfX"/>
                             <constraint firstItem="DIg-F0-A9w" firstAttribute="top" secondItem="tb6-Gi-zvX" secondAttribute="bottom" constant="31" id="eL1-Iu-gW5"/>
                             <constraint firstItem="t6Y-Rl-LCw" firstAttribute="top" secondItem="teC-dy-n8S" secondAttribute="top" constant="14" id="kqs-Es-dcK"/>
+                            <constraint firstItem="DwF-4Z-KmC" firstAttribute="trailing" secondItem="teC-dy-n8S" secondAttribute="trailing" id="mvI-hB-3rK"/>
                             <constraint firstItem="5ea-UB-iJM" firstAttribute="top" secondItem="teC-dy-n8S" secondAttribute="top" constant="195" id="tsF-ok-1gD"/>
                             <constraint firstItem="tb6-Gi-zvX" firstAttribute="top" secondItem="t6Y-Rl-LCw" secondAttribute="bottom" constant="19" id="wnL-hQ-U2h"/>
                             <constraint firstItem="teC-dy-n8S" firstAttribute="trailing" secondItem="5ea-UB-iJM" secondAttribute="trailing" constant="136" id="xpU-IL-9Vk"/>
@@ -243,6 +270,7 @@
                     <connections>
                         <outlet property="LabelBestScore" destination="Bjt-lL-1I3" id="yTf-7E-Pf2"/>
                         <outlet property="LabelPunteggio" destination="DIg-F0-A9w" id="TKq-Yo-7p1"/>
+                        <outlet property="OutBtnReload" destination="DwF-4Z-KmC" id="RXb-yF-naF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CW3-1s-17O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -253,6 +281,7 @@
     <resources>
         <image name="BackgroundTalpa" width="310" height="197"/>
         <image name="Cartello" width="490" height="490"/>
+        <image name="Marrone" width="490" height="490"/>
         <image name="Talpa" width="640" height="640"/>
         <image name="logo" width="504" height="88"/>
     </resources>
